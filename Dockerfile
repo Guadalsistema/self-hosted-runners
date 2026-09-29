@@ -1,5 +1,7 @@
 FROM docker.io/library/odoo:18
 
+ARG CHROME_VERSION=154.0.8037.57
+
 ###############################################################################
 # 1. Paquetes básicos + PGDG + PostgreSQL 16 (solo binarios, sin servicio)
 ###############################################################################
