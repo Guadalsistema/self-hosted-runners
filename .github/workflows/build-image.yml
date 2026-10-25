@@ -20,7 +20,7 @@ jobs:
             set -eu
             test "$(id -un)" = runner
             sudo -n true
-            command -v bash curl git gzip jq make ps sudo tar
+            command -v bash curl git gzip jq make ps ssh sudo tar
             ! command -v podman
             test "$(id -u)" = 999
             grep -qx "runner:1:998" /etc/subuid

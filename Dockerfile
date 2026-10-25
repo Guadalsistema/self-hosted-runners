@@ -16,7 +16,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN test "$(dpkg --print-architecture)" = amd64
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    bash ca-certificates curl git gzip jq make procps sudo tar \
+    bash ca-certificates curl git gzip jq make openssh-client procps sudo tar \
     libgssapi-krb5-2 libicu74 liblttng-ust1t64 libssl3 libunwind8 \
     libcap2-bin libgcc-s1 libstdc++6 uidmap zlib1g \
     && rm -rf /var/lib/apt/lists/*
