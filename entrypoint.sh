@@ -45,7 +45,7 @@ if [[ ! -f .runner ]]; then
     echo 'Error: an unregistered runner requires GITHUB_URL and RUNNER_TOKEN.' >&2
     exit 2
   fi
-  labels=ubuntu-24.04
+  labels=ubuntu-26.04
   [[ -n $RUNNER_LABELS ]] && labels+=",$RUNNER_LABELS"
   config=(--unattended --url "$GITHUB_URL" --token "$RUNNER_TOKEN"
           --name "$RUNNER_NAME" --work _work --replace

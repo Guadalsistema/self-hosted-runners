@@ -1,4 +1,4 @@
-name: Build Ubuntu 24.04 runner image
+name: Build Ubuntu 26.04 runner image
 
 on:
   push:
@@ -21,6 +21,8 @@ jobs:
             test "$(id -un)" = runner
             sudo -n true
             command -v bash curl git gzip jq make ps ssh sudo tar
+            grep -qx 'VERSION_ID="26.04"' /etc/os-release
+            test "$(node --version)" = v26.12.1
             ! command -v podman
             test "$(id -u)" = 999
             grep -qx "runner:1:998" /etc/subuid

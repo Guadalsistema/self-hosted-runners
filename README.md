@@ -1,11 +1,11 @@
-# Ubuntu 24.04 organization self-hosted runner
+# Ubuntu 26.04 organization self-hosted runner
 
 This repository builds one persistent, trusted, x64 organization runner. It
 has no hosted VM tool cache and does not install Podman by default. Select it
 explicitly:
 
 ```yaml
-runs-on: [self-hosted, linux, x64, ubuntu-24.04]
+runs-on: [self-hosted, linux, x64, ubuntu-26.04]
 ```
 
 Register exactly one runner in the `Default` runner group. The `runner` user
@@ -86,7 +86,7 @@ Do not assume an existing legacy registration gains labels automatically.
 
 If migrating the old Python runner, explicitly remove that Python runner in
 GitHub first, then re-register `guadalbackup` with the fresh token and no
-`python` label. Verify the old `python` label is gone and `ubuntu-24.04`
+`python` label. Verify the old `python` label is gone and `ubuntu-26.04`
 exists before enabling jobs; labels are not added automatically to the legacy
 registration.
 
