@@ -20,7 +20,7 @@ jobs:
             set -eu
             test "$(id -un)" = runner
             sudo -n true
-            command -v bash curl git gzip jq make ps ssh sudo tar
+            for command in bash curl git gzip jq make ps ssh sudo tar; do command -v "$command"; done
             grep -qx 'VERSION_ID="26.04"' /etc/os-release
             test "$(node --version)" = v26.12.1
             ! command -v podman
