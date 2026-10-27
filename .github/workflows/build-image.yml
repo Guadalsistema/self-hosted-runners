@@ -17,7 +17,7 @@ jobs:
           set -eu
           image=ubuntu-runner:test
           docker run --rm --entrypoint /bin/sh "$image" -c '
-            set -eu
+            set -eux
             test "$(id -un)" = runner
             sudo -n true
             for command in bash curl git gzip jq make ps ssh sudo tar; do command -v "$command"; done
