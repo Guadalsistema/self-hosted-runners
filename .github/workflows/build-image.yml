@@ -17,11 +17,11 @@ jobs:
           set -eu
           image=ubuntu-runner:test
           docker run --rm --entrypoint /bin/sh "$image" -c '
-            set -eux
+            set -eu
             test "$(id -un)" = runner
             sudo -n true
             for command in bash curl git gzip jq make ps ssh sudo tar; do command -v "$command"; done
-            grep -qx 'VERSION_ID="26.04"' /etc/os-release
+            grep -qx "VERSION_ID=\"26.04\"" /etc/os-release
             test "$(node --version)" = v26.12.1
             ! command -v podman
             test "$(id -u)" = 999
